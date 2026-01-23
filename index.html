@@ -1,0 +1,46 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ARK</title>
+  <meta name="description" content="ARK — threshold" />
+  <meta name="color-scheme" content="dark" />
+  <link rel="stylesheet" href="ark.css" />
+</head>
+<body class="fade">
+  <!-- Full-screen click zone (minimal ritual entry) -->
+  <div class="gate-clickzone" id="enter"></div>
+
+  <main class="gate" aria-label="ARK entry">
+    <div class="gate-inner">
+      <img class="logo" src="assets/ark-logo.png" alt="ARK" />
+      <div class="gate-hint">Click to enter</div>
+    </div>
+  </main>
+
+  <script>
+    (function(){
+      const enter = document.getElementById('enter');
+      const body = document.body;
+
+      function go(){
+        body.classList.add('out');
+        setTimeout(()=>{ window.location.href = 'home.html'; }, 260);
+      }
+
+      // click anywhere
+      enter.addEventListener('click', go);
+
+      // keyboard: Enter/Space
+      window.addEventListener('keydown', (e)=>{
+        if(e.key === 'Enter' || e.key === ' '){
+          e.preventDefault();
+          go();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
