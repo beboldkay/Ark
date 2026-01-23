@@ -1,0 +1,250 @@
+
+:root{
+  --black:#0A0A0A;
+  --offwhite:#F2EFDF;
+  --storm:#444444;
+  --blue:#0043A5;
+  --green:#006D1C;
+  --pink:#B71C75;
+
+  --max: 980px;
+  --pad: 22px;
+
+  --line: 1px solid rgba(242,239,223,.14);
+  --t: 320ms;
+}
+
+/* Typography tokens (per Visual Identity):
+   - Akira (Display)
+   - Roboto Flex (English body)
+   If you have font files, drop them into /assets/fonts and uncomment @font-face blocks.
+*/
+
+/*
+@font-face{
+  font-family:"Akira";
+  src:url("assets/fonts/Akira.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face{
+  font-family:"Roboto Flex";
+  src:url("assets/fonts/RobotoFlex.woff2") format("woff2");
+  font-weight: 100 1000;
+  font-style: normal;
+  font-display: swap;
+}
+*/
+
+html,body{height:100%;}
+body{
+  margin:0;
+  background: var(--black);
+  color: var(--offwhite);
+  font-family: "Roboto Flex", system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+  letter-spacing: .2px;
+}
+
+a{color:var(--offwhite); text-decoration:none;}
+a:hover{opacity:.86;}
+
+.wrap{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--pad);
+}
+
+hr{
+  border:0;
+  border-top: var(--line);
+  margin: 18px 0;
+}
+
+.small{font-size:12px; opacity:.72; letter-spacing:.8px; text-transform:uppercase;}
+.mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
+.display{
+  font-family: "Akira", "Roboto Flex", system-ui, sans-serif;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding: 12px 14px;
+  border: var(--line);
+  border-radius: 0;
+  background: transparent;
+  color: var(--offwhite);
+  cursor:pointer;
+  user-select:none;
+}
+.btn:hover{border-color: rgba(242,239,223,.28);}
+.btn:active{transform: translateY(1px);}
+.btn.blue{border-color: rgba(0,67,165,.7);}
+.btn.green{border-color: rgba(0,109,28,.7);}
+.btn.pink{border-color: rgba(183,28,117,.7);}
+
+.fade{
+  opacity:1;
+  transition: opacity var(--t) linear;
+}
+.fade.out{opacity:0;}
+.fade.in{opacity:0;}
+.fade.in.ready{opacity:1;}
+
+@media (prefers-reduced-motion: reduce){
+  .fade{transition:none;}
+  .btn:active{transform:none;}
+}
+
+/* Gate screen */
+.gate{
+  height:100%;
+  display:grid;
+  place-items:center;
+}
+.gate-inner{
+  width:min(520px, 76vw);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap: 18px;
+}
+.logo{
+  width:100%;
+  height:auto;
+  display:block;
+  filter: contrast(1.02);
+}
+.gate-hint{
+  opacity:.62;
+  font-size:12px;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+}
+.gate-clickzone{
+  position:fixed;
+  inset:0;
+  cursor:pointer;
+}
+
+/* Home */
+.topbar{
+  position:sticky;
+  top:0;
+  background: rgba(10,10,10,.86);
+  backdrop-filter: blur(6px);
+  border-bottom: var(--line);
+  z-index: 10;
+}
+.topbar .wrap{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 18px;
+  padding: 14px var(--pad);
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-width: 0;
+}
+.brand img{
+  width: 44px;
+  height:auto;
+  display:block;
+}
+.nav{
+  display:flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content:flex-end;
+}
+.nav a{opacity:.78; font-size:12px; letter-spacing:.8px; text-transform:uppercase;}
+.nav a:hover{opacity:1;}
+
+.hero{
+  padding: 44px 0 22px;
+}
+.hero h1{
+  margin: 0 0 12px;
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.06;
+}
+.hero p{
+  margin: 0;
+  max-width: 62ch;
+  opacity: .86;
+  line-height: 1.55;
+}
+
+.deck{
+  padding: 22px 0;
+}
+.deck-title{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 18px;
+}
+.deck-title h2{
+  margin:0;
+  font-size: 14px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+.deck-title .tag{
+  font-size: 12px;
+  opacity:.72;
+  letter-spacing:.9px;
+  text-transform: uppercase;
+}
+.deck .copy{
+  margin-top: 14px;
+  max-width: 74ch;
+  line-height: 1.62;
+  opacity: .9;
+}
+.deck .copy p{margin: 0 0 12px;}
+.grid2{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+@media (min-width: 860px){
+  .grid2{grid-template-columns: 1fr 1fr;}
+}
+
+.card{
+  border: var(--line);
+  padding: 14px;
+}
+.card h3{margin: 0 0 10px; font-size: 12px; letter-spacing:1px; text-transform:uppercase; opacity:.86;}
+.card p{margin:0; line-height:1.55; opacity:.88; font-size:14px;}
+
+.form{
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.input{
+  flex: 1 1 240px;
+  min-width: 220px;
+  padding: 12px 12px;
+  border: var(--line);
+  background: transparent;
+  color: var(--offwhite);
+  outline: none;
+}
+.input:focus{border-color: rgba(242,239,223,.32);}
+.footer{
+  padding: 26px 0 40px;
+  opacity:.72;
+  font-size: 12px;
+  letter-spacing: .5px;
+}

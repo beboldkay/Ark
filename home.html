@@ -1,0 +1,147 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ARK</title>
+  <meta name="description" content="ARK — non-profit electronic label · 50/50 distribution · published allocations" />
+  <meta name="color-scheme" content="dark" />
+  <link rel="stylesheet" href="ark.css" />
+</head>
+<body class="fade in">
+  <header class="topbar">
+    <div class="wrap">
+      <div class="brand">
+        <img src="assets/ark-logo.png" alt="ARK" />
+        <div class="small mono">ARK</div>
+      </div>
+      <nav class="nav" aria-label="Primary">
+        <a href="#deck1">Why</a>
+        <a href="#deck2">What</a>
+        <a href="#deck3">How</a>
+        <a href="#join">Join</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero" id="top">
+      <h1 class="display">Change begins<br/>with a single step.</h1>
+      <p>
+        One vessel. One rhythm. A shared passage through flood-waves and storm-clouds —
+        for moments of real connection, where music becomes a language that doesn’t need translation.
+      </p>
+    </section>
+
+    <hr />
+
+    <!-- Deck 1 -->
+    <section class="deck" id="deck1">
+      <div class="deck-title">
+        <h2 class="display">Deck I</h2>
+        <div class="tag mono">WHY</div>
+      </div>
+      <div class="copy">
+        <p>ARK is not a place. It is an idea.</p>
+        <p>
+          A container for people separated by the storms of life —
+          offering a space away from the flood, away from the noise.
+        </p>
+        <p>
+          On the dancefloor, strangers become partners: same BPM, same sync,
+          moving toward one another — and toward a safe shore where hope outruns the gaps.
+        </p>
+      </div>
+    </section>
+
+    <hr />
+
+    <!-- Deck 2 -->
+    <section class="deck" id="deck2">
+      <div class="deck-title">
+        <h2 class="display">Deck II</h2>
+        <div class="tag mono">WHAT</div>
+      </div>
+
+      <div class="grid2">
+        <div class="card">
+          <h3 class="display">Independent electronic label</h3>
+          <p>
+            ARK curates and releases electronic music from artists of all identities and backgrounds —
+            from the Middle East and beyond.
+          </p>
+        </div>
+        <div class="card">
+          <h3 class="display">Collective + non-profit movement</h3>
+          <p>
+            Every track, every collaboration, every event is proof that music can move, connect,
+            and carry change back into real life.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <hr />
+
+    <!-- Deck 3 -->
+    <section class="deck" id="deck3">
+      <div class="deck-title">
+        <h2 class="display">Deck III</h2>
+        <div class="tag mono">HOW</div>
+      </div>
+
+      <div class="grid2">
+        <div class="card">
+          <h3 class="display">50 / 50 — transparent</h3>
+          <p>
+            All profits from streams, downloads, and purchases are allocated clearly:
+            50% to artists · 50% to humanitarian, apolitical causes supporting liberal values,
+            including LGBTQ+ and women’s rights in the Middle East.
+          </p>
+        </div>
+        <div class="card">
+          <h3 class="display">A real plan</h3>
+          <p>
+            Target: 50 albums in 5 years (10 per year). Each release is a curated VA/album —
+            a soundtrack that’s bigger than music.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <hr />
+
+    <!-- Join -->
+    <section class="deck" id="join">
+      <div class="deck-title">
+        <h2 class="display">Join</h2>
+        <div class="tag mono">FIRST STEP</div>
+      </div>
+      <div class="copy">
+        <p class="small">A way to stay aligned.</p>
+        <form class="form" onsubmit="event.preventDefault(); alert('Received.');">
+          <input class="input" type="email" required placeholder="Email" aria-label="Email" />
+          <button class="btn green" type="submit">Stay with us</button>
+          <a class="btn" href="index.html" title="Back to the gate">Back to gate</a>
+        </form>
+        <p class="small" style="margin-top:14px;">
+          ARK · Deep Ocean Blue <span class="mono">#0043A5</span> · Lebanese Olive Green <span class="mono">#006D1C</span> · Sunset Pink <span class="mono">#B71C75</span>
+        </p>
+      </div>
+    </section>
+
+    <div class="footer">
+      <div>ARK — vessel logic. No tracking. No noise.</div>
+    </div>
+  </main>
+
+  <script>
+    // fade-in
+    (function(){
+      const body = document.body;
+      requestAnimationFrame(()=> body.classList.add('ready'));
+    })();
+  </script>
+</body>
+</html>
